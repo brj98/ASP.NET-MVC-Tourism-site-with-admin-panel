@@ -1,0 +1,124 @@
+﻿@model FPRO.Models.Class.Admin
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logina</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="container">
+       
+        <div class="box">
+            <h2>Giriş</h2>
+            @using (Html.BeginForm("Logina", "Login", FormMethod.Post))
+            {
+                <div class="inputbox">
+                    @Html.TextBoxFor(x => x.Kulanciadi, new { @class = "form-control", placeholder = "Kullanıcı adınız", aria_describedby = "basic-addon1" })
+
+                </div>
+                <div class="inputbox">
+                    @Html.PasswordFor(x => x.Sifre, new { @class = "form-control", placeholder = "Şifre", aria_describedby = "basic-addon1" })
+
+                </div>
+                <input type="submit" name="" value="giriş yap">
+
+            }
+
+            @if (ViewBag.hata != null)
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.hata</div>
+            }
+        </div>
+      
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+<style>
+    .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        padding: 40px;
+        background: rgba(0,0,0,.8);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        border-radius: 10px;
+    }
+    .box:hover
+    {
+        -webkit-box-shadow: 1px 4px 30px 13px rgba(179,174,124,1);
+        -moz-box-shadow: 1px 4px 30px 13px rgba(179,174,124,1);
+        box-shadow: 1px 4px 30px 13px rgba(179,174,124,1);
+    }
+
+        .box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .box .inputbox {
+            position: relative;
+        }
+
+            .box .inputbox input {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 16px;
+                color: #fff;
+                letter-spacing: 1px;
+                margin-bottom: 30px;
+                border: none;
+                border-bottom: 1px solid #fff;
+                outline: none;
+                background: transparent;
+            }
+
+            .box .inputbox label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                letter-spacing: 1px;
+                padding: 10px 0;
+                font-size: 16px;
+                color: #fff;
+                pointer-events: none;
+                transition: .5s;
+            }
+
+            .box .inputbox input:focus ~ label,
+            .box .inputbox input:valid ~ label {
+                top: -18px;
+                left: 0;
+                color: #f5b663;
+                font-size: 12px;
+            }
+
+        .box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #f5b663;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+</style>

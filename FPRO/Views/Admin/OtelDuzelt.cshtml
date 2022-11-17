@@ -1,0 +1,36 @@
+﻿@model FPRO.Models.Class.Oteller
+
+@{
+    ViewBag.Title = "OtelDuzelt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    <h1>Otel Güncelleme Sayfası</h1>
+    <hr />
+    <div style="width: 400px;">
+        @using (Html.BeginForm())
+        {
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Başlık</span>
+                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", placeholder = "", aria_label = "Başlık", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Açıklama</span>
+                @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control", placeholder = "", aria_label = "Açıklama", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Fiyat</span>
+                @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control", placeholder = "", aria_label = "Fiyat", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Bilgi</span>
+                @Html.TextBoxFor(x => x.Bilgi, new { @class = "form-control", placeholder = "", aria_label = "Bilgi", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <input type="submit" value="Güncelle" class="btn btn-success" />
+            </div>
+        }
+    </div>
+    <hr />
+
+</div>

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Admin.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="w3-sidebar  w3-bar-block w3-card w3-animate-left sticky-top" style="display:none;  " id="mySidebar">
+
+        <a href="#home" onclick="w3_close()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
+                <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+            </svg>
+        </a>
+
+        <a href="/Home/Index"><i class="fa fa-fw fa-home"></i> Ana Sayfa</a>
+        <br />
+        <a href="Adminler"><i class="fa fa-fw fa-user"></i> Adminler</a>
+        <br>
+        <a href="MessageList"><i class="fa fa-fw fa-envelope"></i> Mesajlar</a>
+        <br />
+        <a href="Uyelerq"><i class="fa fa-fw fa-user"></i> Uyelerimiz</a>
+        <br>
+        <div class="dropdown">
+            <a class="  dropdown-toggle " data-toggle="dropdown" style="color:#fff;">
+                <i class="fa fa-fw fa-wrench"></i>Hizmetler<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" style="background-color:#000000;">
+                <li><a href="Geziler">Geziler</a></li>
+                <li><a href="Restoranlar">Restoranlar</a></li>
+                <li><a href="Oteller">Oteller</a></li>
+            </ul>
+        </div>
+
+    </div>
+        <div id="main">
+            <div class="w3-black  sticky-top">
+                <button id="openNav" class="w3-button w3-black w3-large" onclick="w3_open()" >&#9776; </button>
+                <a href="CikisYap" class="btn btn-danger float-right" style="margin-right:10px;">Çıkış Yap</a>
+
+                <div class="w3-container">
+                </div>
+            </div>
+            <div class="w3-container">
+                @RenderBody()
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <script>
+            function w3_open() {
+                document.getElementById("main").style.marginLeft = "20%";
+                document.getElementById("mySidebar").style.width = "20%";
+                document.getElementById("mySidebar").style.display = "block";
+            }
+            function w3_close() {
+                document.getElementById("main").style.marginLeft = "0%";
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

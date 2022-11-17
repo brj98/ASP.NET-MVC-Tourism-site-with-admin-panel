@@ -1,0 +1,69 @@
+﻿@model FPRO.Models.Class.Uyeler
+
+@{
+    ViewBag.Title = "UyeGiris";
+    Layout = "~/Views/Shared/_HomeLayoutPage1.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="container3">
+    <div class="contact-box">
+
+        @using (Html.BeginForm())
+        {
+            <div class="right">
+                <h2>Giriş Yap</h2>
+                @Html.AntiForgeryToken()
+
+                <hr />
+
+                <span class="control-label col-md-2" id="basic-addon1">E-Posta</span>
+                @Html.TextBoxFor(x => x.Eposta, new { @class = "field", placeholder = "", aria_label = "E-Posta", aria_describedby = "basic-addon1" })
+
+
+                <span class="control-label col-md-2" id="basic-addon1">Şifre</span>
+                @Html.PasswordFor(x => x.Sifre, new { @class = "field", placeholder = "", aria_label = "Şifre", aria_describedby = "basic-addon1" })
+
+
+                <div class="form-group">
+                    <button class="btn">Giriş Yap</button>
+                </div>
+            </div>
+
+        }
+        @if (ViewBag.hata != null)
+        {
+            <div class="alert alert-danger" role="alert">@ViewBag.hata</div>
+        }
+    </div>
+   
+</div>
+<br />
+<br />
+<br />
+<br />
+<style>
+    .contact-box {
+        max-width: 400px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+    }
+        .contact-box:hover {
+            -webkit-box-shadow: 1px 4px 30px 13px rgba(107,147,177,1);
+            -moz-box-shadow: 1px 4px 30px 13px rgba(107,147,177,1);
+            box-shadow: 1px 4px 30px 13px rgba(107,147,177,1);
+        }
+
+
+    .right {
+        padding: 25px 40px;
+    }
+</style>
+

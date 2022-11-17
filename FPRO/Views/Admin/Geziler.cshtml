@@ -1,0 +1,68 @@
+﻿@using FPRO.Models.Class
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Geziler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Bslik</th>
+            <th scope="col">Aciklama</th>
+            <th scope="col">Resim</th>
+            <th scope="col">Sil</th>
+            <th scope="col">Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+        <tr>
+            <td>@d.Baslik</td>
+            <td>@d.Aciklama</td>
+            <td> <img style="height:100px;" src="@d.Resim" /></td>
+
+            <td>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Sil</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Uyarı</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Silmek istediğne emin misin ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                <a href="/Admin/BlogSil/@d.ID" class="btn btn-danger">Sil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td><a href="/Admin/GeziDuzelt/@d.ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a  href="/Admin/YeniBlog/" class="btn btn-outline-success">Yeni Gezi Ekle</a>
+<style>
+    td {
+        background: #fff;
+        color: #111;
+        border: solid 1px #111;
+    }
+
+    th {
+        border: solid 1px #fff;
+    }
+</style>

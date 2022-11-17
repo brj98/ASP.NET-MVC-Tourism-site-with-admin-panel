@@ -1,0 +1,50 @@
+﻿@using FPRO.Models.Class
+@model List<Admin>
+@{
+    ViewBag.Title = "Adminler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table" style="background-color:#198754; color:#fff;">
+    <thead>
+        <tr>
+            <th scope="col">Adı Soyad</th>
+            <th scope="col">Kullancı Adı</th>
+            <th scope="col">E-Posta</th>
+            <th scope="col">Şifre</th>
+            <th scope="col">Sil</th>
+            <th scope="col">Bilgileri Güncelle</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.AdiSoyad</td>
+            <td>@i.Kulanciadi</td>
+            <td>@i.Eposta</td>
+            <td>@i.Sifre</td>
+            <td><a href="/Admin/AdmSil/@i.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/AdmDuzelt/@i.ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<style>
+    td {
+        background: #fff;
+        color: #111;
+        border: solid 1px #111;
+    }
+
+    th {
+        border: solid 1px #fff;
+        
+    }
+</style>
+

@@ -1,0 +1,16 @@
+﻿@model List<FPRO.Models.Class.Uyeler>
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_HomeLayoutPage1.cshtml";
+}
+
+<h2>Profilim</h2>
+<hr />
+        @foreach (var item in Model)
+        {
+            <p>Ad Soyad: <strong>@item.AdiSoyad</strong></p>
+            <p>Eposta adresiniz: <strong>@item.Eposta</strong></p>
+            <p>Telefon Numaranız: <strong>@item.Telefon</strong></p>
+            <p>Şifreniz: <strong>@item.Sifre</strong></p>
+
+        }

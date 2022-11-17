@@ -1,0 +1,26 @@
+﻿@using FPRO.Models.Class
+@model List<Restoranlar>
+@{
+    ViewBag.Title = "Restoranlarimiz";
+    Layout = "~/Views/Shared/_HomeLayoutPage1.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var r in Model)
+        {
+            <div class="card" style="width: 18rem;">
+                <img src="@r.Resim" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">@r.Aciklama</p>
+                    <a href="Contact" class="btn ">İletişime Geçin</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />

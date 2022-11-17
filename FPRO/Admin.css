@@ -1,0 +1,31 @@
+﻿body {
+    font-family: "Lato", sans-serif;
+}
+
+
+.w3-sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+}
+
+
+
+    .w3-sidebar a:hover {
+        color: #FFF;
+        background-color: darkred;
+    }
+
+.w3-sidebar {
+    background-color: black;
+    display:none;
+}
+    .w3-sidebar button:hover {
+        background-color: darkred
+    }
+
+
+
+

@@ -1,0 +1,24 @@
+﻿@model List<FPRO.Models.Class.Uyeler>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+
+
+      @foreach (var x in Model) { <div class="dropdown show">
+    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="fa fa-user" aria-hidden="true"></i>
+    @x.AdiSoyad</a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/Home/Profil/">
+            <i class="fa fa-address-card" aria-hidden="true"></i>
+            Profilim
+        </a>
+
+        <a class="dropdown-item" href="/Home/LogOut/">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+            Çıkış Yap
+        </a>
+    </div>
+</div>
+} 
+
+   

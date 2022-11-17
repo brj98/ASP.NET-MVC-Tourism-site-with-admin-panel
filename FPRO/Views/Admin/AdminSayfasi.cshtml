@@ -1,0 +1,14 @@
+﻿@model List<FPRO.Models.Class.Admin>
+
+@{
+    ViewBag.Title = "AdminSayfasi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AdminSayfasi</h2>
+<hr />
+@foreach (var item in Model)
+{
+    <p>Sayın @item.AdiSoyad Admine Hoşgeldiniz </p>
+}
+

@@ -1,0 +1,53 @@
+﻿@using FPRO.Models.Class
+@model List<Oteller>
+@{
+    ViewBag.Title = "Oteller";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Başlık</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">Bilgi</th>
+            <th scope="col">Resim</th>
+            <th scope="col">Sil</th>
+            <th scope="col">Güncelleme</th>
+
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.Baslik</td>
+            <td>@i.Aciklama</td>
+            <td>@i.Fiyat</td>
+            <td>@i.Bilgi</td>
+            <td> <img style="height:100px;" src="@i.Resim" /></td>
+            <td><a href="/Admin/OtellSil/@i.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/OtelDuzelt/@i.ID" class="btn btn-warning">Güncelle</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Admin/Yeniotel/" class="btn btn-outline-success">Yeni Otell Ekle</a>
+
+<style>
+    td {
+        background: #fff;
+        color: #111;
+        border: solid 1px #111;
+    }
+
+    th {
+        border: solid 1px #fff;
+    }
+</style>

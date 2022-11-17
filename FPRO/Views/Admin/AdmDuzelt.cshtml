@@ -1,0 +1,38 @@
+﻿@model FPRO.Models.Class.Admin
+
+@{
+    ViewBag.Title = "AdmDuzelt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h1>Admin Güncelleme Sayfası</h1>
+    <hr />
+    <div style="width: 400px;">
+        @using (Html.BeginForm())
+        {
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Adı Soyad</span>
+                @Html.TextBoxFor(x => x.AdiSoyad, new { @class = "form-control", placeholder = "", aria_label = "Adı Soyad", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Kullancı Adı</span>
+                @Html.TextBoxFor(x => x.Kulanciadi, new { @class = "form-control", placeholder = "", aria_label = "Kullancı Adı", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">E-Posta</span>
+                @Html.TextBoxFor(x => x.Eposta, new { @class = "form-control", placeholder = "", aria_label = "E-Posta", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Şifre</span>
+                @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", placeholder = "", aria_label = "Şifre", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <input type="submit" value="Güncelle" class="btn btn-success" />
+            </div>
+        }
+    </div>
+    <hr />
+
+</div>
+

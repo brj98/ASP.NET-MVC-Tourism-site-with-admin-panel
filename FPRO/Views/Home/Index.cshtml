@@ -1,0 +1,112 @@
+﻿@using FPRO.Models.Class
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutPage1.cshtml";
+}
+
+<!--slide-->
+<div class="container-fluid">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+
+        </ol>
+        <div class="carousel-inner" style="height:500px;">
+            <div class="carousel-item active">
+                <img src="~/resimler/banner1.jpg" class="d-block w-100 " alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/resimler/banner2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/resimler/banner3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/resimler/banner4.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+</div>
+<br>
+<!--slide-->
+<!--geziler-->
+<div class="titlepage ">
+    <h2>Gezlecek Yerler</h2>
+    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam numquam molestias quod pariatur placeat exercitationem ratione nostrum id, eveniet ullam!</span>
+</div>
+<div class="container">
+    @foreach (var i in Model)
+    {
+        <div class="box">
+            <div class="imgbox">
+                <img src="@i.Resim">
+            </div>
+            <div class="details">
+                <div class="content">
+                    <h2>@i.Baslik</h2>
+                    <p>
+                        @i.Aciklama
+                    </p>
+                    <a href="Contact" class="btn ">İletişime Geçin</a>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<br>
+<br>
+<!--geziler-->
+<!--hizmetler-->
+<div class="container-fluid">
+    <section class="services" style="background:#6b93b1;">
+        <h2 class="heading">Hizmetlerimiz</h2>
+        <p class="text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Dolores ab sequi beatae deserunt dignissimos eum vitae voluptatibus repellendus qui vero sint nobis, sunt labore, illo numquam necessitatibus dicta fuga incidunt odit ullam, architecto a! Aliquam similique, illum dicta ab suscipit ad nostrum. Eligendi inventore
+            facilis rerum natus deserunt excepturi quibusdam!
+        </p>
+        <div class="container1">
+            <div class="serviceBx">
+                <div>
+                    <a href="Otellerimiz" style="text-decoration: none; color:#000">
+                        <img src="~/resimler/hot.png" alt="">
+                        <h2>Oteller</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="serviceBx">
+                <div>
+                    <a href="Blog" style="text-decoration: none; color:#000">
+                        <img src="~/resimler/trav.png" alt="">
+                        <h2>Geziler</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="serviceBx">
+                <div>
+                    <a href="Restoranlarimiz" style="text-decoration: none; color:#000">
+                        <img src="~/resimler/res.png" alt="">
+                        <h2>Restoranlar</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<br>
+<!--hizmetler-->

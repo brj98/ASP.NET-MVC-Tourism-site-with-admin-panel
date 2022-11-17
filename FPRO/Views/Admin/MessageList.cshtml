@@ -1,0 +1,46 @@
+﻿@using FPRO.Models.Class
+
+@model List<Contact>
+@{
+    ViewBag.Title = "MessageList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Adı Soyad</th>
+            <th scope="col">E-Posta</th>
+            <th scope="col">Telefon Numara</th>
+            <th scope="col">Mesajlar</th>
+            <th scope="col">Sil</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Username</td>
+                <td>@i.Email</td>
+                <td>@i.Phone</td>
+                <td>@i.Message</td>
+                <td><a href="/Admin/Sil/@i.ID" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<style>
+    td {
+        background: #fff;
+        color: #111;
+        border: solid 1px #111;
+    }
+
+    th {
+        border: solid 1px #fff;
+    }
+</style>

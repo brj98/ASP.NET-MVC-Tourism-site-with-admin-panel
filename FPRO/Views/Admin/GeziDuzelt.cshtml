@@ -1,0 +1,30 @@
+﻿@model FPRO.Models.Class.Blog
+
+@{
+    ViewBag.Title = "GeziDuzelt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h1>Geziler Güncelleme Sayfası</h1>
+    <hr />
+    <div style="width: 400px;">
+        @using (Html.BeginForm())
+        {
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Başlık</span>
+                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", placeholder = "", aria_label = "Başlık", aria_describedby = "basic-addon1" })
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Açıklama</span>
+                @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control", placeholder = "", aria_label = "Açıklama", aria_describedby = "basic-addon1" })
+            </div>
+           
+            <div class="input-group mb-3">
+                <input type="submit" value="Güncelle" class="btn btn-success" />
+            </div>
+        }
+    </div>
+    <hr />
+ 
+</div>

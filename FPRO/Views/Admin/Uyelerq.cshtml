@@ -1,0 +1,43 @@
+﻿@using FPRO.Models.Class
+
+@model List<Uyeler>
+@{
+    ViewBag.Title = "Uyelerq";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table" style="background-color:#004085; color:#fff;">
+    <thead>
+        <tr>
+            <th scope="col">ADI SOYAD</th>
+            <th scope="col">E-POSTA</th>
+            <th scope="col">TELEFON NO</th>
+            <th scope="col">Sil</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.AdiSoyad</td>
+                <td>@i.Eposta</td>
+                <td>@i.Telefon</td>
+                <td><a href="/Admin/UyeSil/@i.ID" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<style>
+    td {
+        background: #fff;
+        color: #111;
+        border: solid 1px #111;
+    }
+
+    th {
+        border: solid 1px #fff;
+    }
+</style>
